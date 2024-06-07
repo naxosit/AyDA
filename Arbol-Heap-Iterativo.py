@@ -74,11 +74,11 @@ class MinHeap:
 			self.swap(current, self.parent(current)) 
 			current = self.parent(current) 
 
-	# Función para insertar un nodo en el montón 
+	# Función para mostrar el heap 
 	def Print(self): 
 		for i in range(1, (self.size//2)+1): 
-			print(" PARENT : "+ str(self.Heap[i])+" LEFT CHILD : "+
-								str(self.Heap[2 * i])+" RIGHT CHILD : "+
+			print(" Nodo Padre: "+ str(self.Heap[i])+" \nHijo Izquierdo: "+
+								str(self.Heap[2 * i])+" \nHijo Derecho: "+
 								str(self.Heap[2 * i + 1])) 
 
 	# Función para construir el montón mínimo usando 
@@ -88,7 +88,7 @@ class MinHeap:
 		for pos in range(self.size//2, 0, -1): 
 			self.minHeapify(pos) 
 
-	# Función para eliminar y devolver el mínimo. 
+	# Función para eliminar y devolver el mínimo
 	# elemento del montón 
 	def remove(self): 
 
@@ -98,21 +98,31 @@ class MinHeap:
 		self.minHeapify(self.FRONT) 
 		return popped 
 
-# Driver Code 
-if __name__ == "__main__": 
-	
-	print('The minHeap is ') 
-	minHeap = MinHeap(15) 
-	minHeap.insert(5) 
-	minHeap.insert(3) 
-	minHeap.insert(17) 
-	minHeap.insert(10) 
-	minHeap.insert(84) 
-	minHeap.insert(19) 
-	minHeap.insert(6) 
-	minHeap.insert(22) 
-	minHeap.insert(9) 
-	minHeap.minHeap() 
+# Vamos a añadir un menú interactivo
+if __name__ == "__main__":
+    heap = MinHeap(15)
 
-	minHeap.Print() 
-	print("The Min val is " + str(minHeap.remove())) 
+    while True:
+        print("\nMenú:")
+        print("1. Insertar elemento")
+        print("2. Mostrar heap")
+        print("3. Eliminar elemento")
+        print("4. Salir")
+
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == "1":
+            element = int(input("Ingrese el elemento a insertar: "))
+            heap.insert(element)
+        elif opcion == "2":
+            heap.Print()
+        elif opcion == "3":
+            if heap.size == 0:
+                print("El heap está vacío. No hay elementos para eliminar.")
+            else:
+                print("Elemento eliminado:", heap.remove())
+        elif opcion == "4":
+            print("Saliendo...")
+            break
+        else:
+            print("Opción inválida. Intente de nuevo.")
