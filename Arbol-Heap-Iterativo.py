@@ -50,13 +50,13 @@ class MinHeap:
 			self.Heap[pos] > self.Heap[self.rightChild(pos)]): 
 
 				# Intercambiar con el hijo izquierdo y amontonar 
-				# el niño izquierdo
+				# el hijo izquierdo
 				if self.Heap[self.leftChild(pos)] < self.Heap[self.rightChild(pos)]: 
 					self.swap(pos, self.leftChild(pos)) 
 					self.minHeapify(self.leftChild(pos)) 
 
-				# Intercambiar con el niño adecuado y amontonar 
-				# el niño correcto 
+				# Intercambiar con el hijo adecuado y amontonar 
+				# el hijo correcto 
 				else: 
 					self.swap(pos, self.rightChild(pos)) 
 					self.minHeapify(self.rightChild(pos)) 
