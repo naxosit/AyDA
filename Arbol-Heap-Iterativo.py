@@ -13,55 +13,55 @@ class MinHeap:
 		self.Heap[0] = -1 * sys.maxsize 
 		self.FRONT = 1
 
-	# Function to return the position of 
-	# parent for the node currently 
-	# at pos 
+	# Función para devolver la posición de 
+    # padre para el nodo actualmente 
+    # en la posición
 	def parent(self, pos): 
 		return pos//2
 
-	# Function to return the position of 
-	# the left child for the node currently 
-	# at pos 
+	# Función para devolver la posición de 
+	# el hijo izquierdo del nodo actualmente 
+	# en la posición
 	def leftChild(self, pos): 
 		return 2 * pos 
 
-	# Function to return the position of 
-	# the right child for the node currently 
-	# at pos 
+	# Función para devolver la posición de 
+	# el hijo adecuado para el nodo actualmente 
+	# en la posición
 	def rightChild(self, pos): 
 		return (2 * pos) + 1
 
-	# Function that returns true if the passed 
-	# node is a leaf node 
+	# Función que devuelve verdadero si se pasa 
+	# el nodo es un nodo hoja 
 	def isLeaf(self, pos): 
 		return pos*2 > self.size 
 
-	# Function to swap two nodes of the heap 
+	# Función para intercambiar dos nodos del heap 
 	def swap(self, fpos, spos): 
 		self.Heap[fpos], self.Heap[spos] = self.Heap[spos], self.Heap[fpos] 
 
-	# Function to heapify the node at pos 
+	#Función para amontonar el nodo en pos 
 	def minHeapify(self, pos): 
 
-		# If the node is a non-leaf node and greater 
-		# than any of its child 
+		# Si el nodo es un nodo no hoja y mayor 
+		# que cualquiera de sus hijos
 		if not self.isLeaf(pos): 
 			if (self.Heap[pos] > self.Heap[self.leftChild(pos)] or
 			self.Heap[pos] > self.Heap[self.rightChild(pos)]): 
 
-				# Swap with the left child and heapify 
-				# the left child 
+				# Intercambiar con el hijo izquierdo y amontonar 
+				# el niño izquierdo
 				if self.Heap[self.leftChild(pos)] < self.Heap[self.rightChild(pos)]: 
 					self.swap(pos, self.leftChild(pos)) 
 					self.minHeapify(self.leftChild(pos)) 
 
-				# Swap with the right child and heapify 
-				# the right child 
+				# Intercambiar con el niño adecuado y amontonar 
+				# el niño correcto 
 				else: 
 					self.swap(pos, self.rightChild(pos)) 
 					self.minHeapify(self.rightChild(pos)) 
 
-	# Function to insert a node into the heap 
+	# Función para insertar un nodo en el montón
 	def insert(self, element): 
 		if self.size >= self.maxsize : 
 			return
@@ -74,22 +74,22 @@ class MinHeap:
 			self.swap(current, self.parent(current)) 
 			current = self.parent(current) 
 
-	# Function to print the contents of the heap 
+	# Función para insertar un nodo en el montón 
 	def Print(self): 
 		for i in range(1, (self.size//2)+1): 
 			print(" PARENT : "+ str(self.Heap[i])+" LEFT CHILD : "+
 								str(self.Heap[2 * i])+" RIGHT CHILD : "+
 								str(self.Heap[2 * i + 1])) 
 
-	# Function to build the min heap using 
-	# the minHeapify function 
+	# Función para construir el montón mínimo usando 
+	# la función minHeapify 
 	def minHeap(self): 
 
 		for pos in range(self.size//2, 0, -1): 
 			self.minHeapify(pos) 
 
-	# Function to remove and return the minimum 
-	# element from the heap 
+	# Función para eliminar y devolver el mínimo. 
+	# elemento del montón 
 	def remove(self): 
 
 		popped = self.Heap[self.FRONT] 
