@@ -1,6 +1,7 @@
 # Existen dos tipos de códigos Heap en programación, el MaxHeap y el
 # MinHeap. En este caso, analizaremos el código MinHeap.
 # Fuente: https://www.geeksforgeeks.org/min-heap-in-python/?ref=ml_lbp
+# Visualizador: https://www.cs.usfca.edu/~galles/visualization/Heap.html
 
 import sys 
 
