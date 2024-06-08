@@ -16,3 +16,4 @@ for solucion in Reinas(8, 0, [], [], []):
 
 
 # Código extraído de https://en.wikipedia.org/wiki/Eight_queens_puzzle#Sample_program
+# Otro link de interés: https://stackoverflow.com/questions/75999918/implementing-a-python-algorithm-for-solving-the-n-queens-problem-efficiently
