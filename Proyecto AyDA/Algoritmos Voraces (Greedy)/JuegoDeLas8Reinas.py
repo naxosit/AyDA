@@ -10,6 +10,7 @@ def Reinas(n: int, i: int, a: list, b: list, c: list):
                 yield from Reinas(n, i + 1, a + [j], b + [i + j], c + [i - j])
             else:
                 yield a
+# Queda modificar los yield from, puesto que esta técnica es de lo llamado "Backtracking".
 
 for solucion in Reinas(8, 0, [], [], []):
     print(solucion)
