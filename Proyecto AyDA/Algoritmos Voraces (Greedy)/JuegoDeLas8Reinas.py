@@ -1,6 +1,6 @@
 # Link de extracción del código: https://github.com/dev-michael-schmidt/n-queens/blob/master/greedy_local.py
 
-# Queda modificar la variable 'n' por 8, puesto que este código está hecho para 'n' reinas.
+# Código modificado para 8 reinas
 
 import random
 import numpy as np
@@ -9,11 +9,11 @@ class GreedyLocal:
     """
 
     """
-    def __init__(self, N):
+    def __init__(self):
         """
 
         """
-        self.N = N
+        self.N = 8  # Cambiamos N a 8 para 8 reinas
         self.initialize()
 
     def __str__(self):
@@ -35,7 +35,7 @@ class GreedyLocal:
         """
 
         """
-        tries = int(self.N / 2)
+        tries = int(self.N / 2)  # Aquí toma como atributo las 8 reinas definidas anteriormente
         curr = self.find_lowest()
 
         while not self.is_solution():
@@ -50,7 +50,7 @@ class GreedyLocal:
 
             if not tries:
                 self.initialize()
-                tries = int(self.N / 2)
+                tries = int(self.N / 2)  # Aquí también toma como atributo las 8 reinas definidas anteriormente
                 curr = self.find_lowest()
 
 
@@ -58,7 +58,7 @@ class GreedyLocal:
         """
 
         """
-        self.board = np.array([[0 for _ in range(9)] for _ in range(9)], dtype=np.int8)
+        self.board = np.array([[0 for _ in range(8)] for _ in range(8)], dtype=np.int8)  # Cambiamos el tamaño del arreglo a 8x8
         self.queens = []
         self.minimums = []
 
@@ -81,7 +81,9 @@ class GreedyLocal:
                 self.board[r][c] = -1
                 for k in range(self.N):
                     if k != r:
-                        count += self.heuristic(self.queens[k])
+                        count += self.heuristic([self.queens[k][0], self.queens[k][1]])  # Cambiamos self.queens[k] a [self.queens[k][0], self.queens[k][1]] para 
+                                                                                         # pasar las coordenadas de la reina correctamente
+
 
                 count += self.heuristic([r, c])
                 self.board[r][c] = -1 if (self.queens[r][0] == r and self.queens[r][1] == c) else count
@@ -152,6 +154,6 @@ class GreedyLocal:
         return True
 
 if __name__ == '__main__':
-    gl = GreedyLocal(8)
+    gl = GreedyLocal()
     gl.solve()
     print(gl)
