@@ -1,3 +1,5 @@
+#Link de extracción del codigo: https://github.com/Kashish24/hackerEarthCodingSolutions/blob/main/greedy-algorithm-to-find-minimum-number-of-coins.py
+
 #Definimos los valores de las monedas chilenas a usar
 monedas = [10, 50, 100, 500]
 
@@ -24,5 +26,3 @@ while(i >= 0):
 
 print(f'Total monedas usadas {len(total_monedas)} : ', sep=",")
 print(*total_monedas)
-##https://github.com/MyloTuT/Greedy
-##https://github.com/Kashish24/hackerEarthCodingSolutions/blob/main/greedy-algorithm-to-find-minimum-number-of-coins.py
