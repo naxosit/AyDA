@@ -1,5 +1,6 @@
 #Link de extracción del codigo: https://github.com/Kashish24/hackerEarthCodingSolutions/blob/main/greedy-algorithm-to-find-minimum-number-of-coins.py
 
+#Codigo modificado para CambioDeMonedas
 #Definimos los valores de las monedas chilenas a usar
 monedas = [10, 50, 100, 500]
 
