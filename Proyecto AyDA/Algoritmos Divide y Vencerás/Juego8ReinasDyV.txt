@@ -1,0 +1,24 @@
+Algoritmo para N reinas;
+Begin
+Case N of:
+    2,3: Output (No solution);
+    8, 9, 14, 15, 26, 27, 38, 49: Output (Special-solution(N)); {Table look up}
+    Otherwise: Begin {Apply general solution scheme}
+        Even <- false; {Solve for an odd nummber}
+        If (N is even) the Begin {Add one, solve, the drop the extra corner}
+                    N <- N+1
+                    Even <- true;
+                End;
+        If (N mod 3 =! 0) then Board <-Regular-solution (N)
+            Or Board <- Decomposition-solution(N);
+        Else Begin
+                Find B, C s.t. 4B+C=N; {Set A=5, find B and C}
+                Board <- general-solution(N, 5, B, C);
+            End;
+        If (Even) Then Board <- Board-minus-corner-queen; {Drop the corner}
+        Output(Board);
+            End;
+End.
+
+Es un algoritmo que encuentra una solucion para cualquier instancia del problema de las N-Reinas.
+
