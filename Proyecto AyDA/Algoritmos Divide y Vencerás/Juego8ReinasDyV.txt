@@ -22,3 +22,5 @@ End.
 
 Es un algoritmo que encuentra una solucion para cualquier instancia del problema de las N-Reinas.
 
+
+
