@@ -27,7 +27,7 @@ public class NReinas {
 
     public static void buscarReinas(int n, int i, int[] solucion,
                                     boolean[] f, boolean[] dp, boolean[] ds) {
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j < n; j++) {
             if (f[j] && dp[i - j + n - 1] && ds[i + j]) {
                 solucion[i] = j;
 
@@ -44,6 +44,7 @@ public class NReinas {
                 dp[i - j + n - 1] = true;
                 ds[i + j] = true;
             }
+        }
     }
 
     public static void imprimir(int[] solucion) {
@@ -60,5 +61,3 @@ public class NReinas {
         System.out.println();
     }
 }
-
-                    
