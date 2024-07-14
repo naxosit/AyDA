@@ -6,13 +6,9 @@ import random
 import numpy as np
 
 class GreedyLocal:
-    """
-
-    """
+    
     def __init__(self):
-        """
-
-        """
+        
         self.N = 8  # Cambiamos N a 8 para 8 reinas
         self.initialize()
 
@@ -32,9 +28,7 @@ class GreedyLocal:
         return s
 
     def solve(self):
-        """
-
-        """
+        
         tries = int(self.N / 2)  # Aquí toma como atributo las 8 reinas definidas anteriormente
         curr = self.find_lowest()
 
@@ -55,9 +49,7 @@ class GreedyLocal:
 
 
     def initialize(self):
-        """
-
-        """
+        
         self.board = np.array([[0 for _ in range(8)] for _ in range(8)], dtype=np.int8)  # Cambiamos el tamaño del arreglo a 8x8
         self.queens = []
         self.minimums = []
@@ -70,9 +62,7 @@ class GreedyLocal:
         self.update()
 
     def update(self):
-        """
-
-        """
+        
         count = 0
 
         for r in range(self.N):
@@ -90,9 +80,7 @@ class GreedyLocal:
                 count = 0
 
     def find_lowest(self):
-        """
-
-        """
+        
         min = self.board[0][0] if self.board[0][0] != -1 else self.board[0][1]
         self.minimums = []
 
@@ -109,9 +97,7 @@ class GreedyLocal:
         return min
 
     def place_lowest(self):
-        """
-
-        """
+        
 
         move = random.randint(0, len(self.minimums) - 1)
         row, col = self.minimums[move][0], self.minimums[move][1]
@@ -125,9 +111,7 @@ class GreedyLocal:
                 break
 
     def heuristic(self, queen):
-        """
-
-        """
+        
         count = 0
         for r, c in zip(range(queen[0]+1, self.N), range(queen[1]+1, self.N)):
             if self.board[r][c] == -1:
@@ -144,9 +128,7 @@ class GreedyLocal:
         return count
 
     def is_solution(self):
-        """
-
-        """
+        
         for i in range(self.N):
             if self.heuristic(self.queens[i]):
                 return False
