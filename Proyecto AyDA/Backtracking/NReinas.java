@@ -3,7 +3,7 @@
 public class NReinas {
 
     public static void main(String[] args) {
-        int n = 8; // Puedes cambiar el valor de n según sea necesario
+        int n = 8; // Puedes cambiar el valor de n según sea necesario. Nosotros ocuparemos 8, ya que así lo requiere el proyecto.
         n_reinas(n);
     }
 
