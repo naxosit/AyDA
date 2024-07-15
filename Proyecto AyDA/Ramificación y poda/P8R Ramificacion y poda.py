@@ -1,5 +1,5 @@
 """ Programa en Python3 para resolver el Problema de las 8 Reinas usando Ramificación y Poda """
-
+# Código extraído de https://www.geeksforgeeks.org/n-queen-problem-using-branch-and-bound/
 
 N = 8    # Define el tamaño del tablero (8x8)
 
